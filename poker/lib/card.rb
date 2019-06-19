@@ -6,15 +6,12 @@ class Card
   attr_reader :suite, :value
 
   def initialize(suite, value)
-    @suite = suite #a string
-    @value = value #a string
+    @suite = suite
+    @value = value
   end
 
   def <=>(other_card)
-    case (VALS[self.value] <=> VALS[other_card.value])
-    when 1 return 1
-    when -1 return -1
-    when 0 return 0
+    (VALS[self.value] <=> VALS[other_card.value])
   end
 
   def same_suite?(other_card)
@@ -23,6 +20,3 @@ class Card
 
 
 end
-
-# suites = ["♤", "♡", "♢", "♧"]
-# values = ["2","3","4","5","6","7","8","9","10","J","Q","K","A"]
